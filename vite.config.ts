@@ -5,11 +5,14 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  root: '.', // Specify that the root directory is the same level as vite.config.ts
+  root: '.', 
   build: {
-    outDir: 'dist', // Output folder for built files
+    outDir: 'dist',
     rollupOptions: {
-      input: './index.html', // Point to the index.html in the root
+      input: './index.html',
     },
+  },
+  server: {
+    port: 3001, // เปลี่ยนพอร์ตเป็น 3001 หรือพอร์ตอื่นๆ ที่ไม่ได้ใช้งาน
   },
 });

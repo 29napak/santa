@@ -14,6 +14,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
+const port = process.env.PORT || 3001; 
+
+
 const usersUrl = 'https://raw.githubusercontent.com/alj-devops/santa-data/master/users.json';
 const profilesUrl = 'https://raw.githubusercontent.com/alj-devops/santa-data/master/userProfiles.json';
 
@@ -80,6 +83,6 @@ app.post('/', async (req, res) => {
 // Call sendEmails every 15 seconds
 setInterval(() => sendEmails(pendingRequests), 15000);
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
